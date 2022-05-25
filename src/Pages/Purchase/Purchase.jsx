@@ -11,13 +11,14 @@ const Purchase = () => {
 
   const [parts, setParts] = useState({});
   const [user] = useAuthState(auth);
+  const { name } = parts;
+
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-
-  const { minOrder, available } = parts;
 
   useEffect(() => {
     (async () => {
@@ -33,6 +34,7 @@ const Purchase = () => {
 
   const onSubmit = (data, e) => {
     console.log(data);
+
     const url = `http://localhost:5000/orders`;
 
     axios.post(url, data).then((response) => {
@@ -106,6 +108,15 @@ const Purchase = () => {
               defaultValue={user.email}
               {...register("email")}
             />
+            { name &&
+              <input
+                className="input input-bordered w-full max-w-xs"
+                placeholder="Item"
+                defaultValue={name}
+                name="item"
+                {...register("item")}
+              />
+            }
             <input
               className="input input-bordered w-full max-w-x"
               placeholder="Quantity"
