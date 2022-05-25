@@ -9,6 +9,8 @@ import Home from './Pages/Home/Home';
 import NotFound from './Pages/Shared/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import RequireAuth from './Pages/Login/RequireAuth';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
 
@@ -22,6 +24,9 @@ function App() {
           <Route path="blogs" element={<Blogs></Blogs>}></Route>
           <Route path="portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="signup" element={<SignUp></SignUp>}></Route>
+          <Route path='purchase/:purchaseId' element={<RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
         <ToastContainer position="top-center" />

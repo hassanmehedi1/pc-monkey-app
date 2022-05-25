@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "name": "Amd Ryzen 7 Processor",
+    "price": "159",
+    "description": "The AMD Ryzen 7 5700X Is Unlocked And Features 8 Cores Along With 16 Threads Making This Processor Great For Gaming, Content Creation And Streamers Who Love To Multi-Task. Whether You Are Playing The Latest Games, Designing The Next Skyscraper, Or Crunching Data, You Need A Powerful Processor That Can Handle It All—And More",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/NTpqNpf/19-113-736-V03.jpg"
+  },
+  {
+    "_id": 2,
+    "name": "ASUS TUF Gaming Z690-Plus Motherboard",
+    "price": "250",
+    "description": "The ASUS TUF Z690-PLUS WIFI D4 Motherboard From ASUS. Designed Around Intel's 12th Gen Processors, This ASUS TUF Z690-PLUS WIFI D4 Motherboard Provides Enhanced System-Wide Functionality By Allowing You To Install A Wide Range Of Components, Making This Ideal For Gaming Enthusiasts.",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/wSLdYK1/13-119-312-V01.jpg"
+  },
+  {
+    "_id": 3,
+    "name": "CORSAIR Vengeance RGB 16GB DDR4 Desktop Ram",
+    "price": "129",
+    "description": "CORSAIR Vengeance RGB RS 16GB Illuminate Your System With Dynamic RGB Lighting From Six Individually Addressable RGB LEDs, Encased During A Panoramic Light Pipe That Gives Unobstructed Viewing From Virtually Every Angle.",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/BGmD4tj/20-236-798-V01.jpg"
+  },
+  {
+    "_id": 4,
+    "name": "ASUS GAMING GeForce RTX 2070 Mini 8GB Graphics Card",
+    "price": "499",
+    "description": "The All-New Generation Of ASUS GAMING GeForce Graphics Cards Are Here. The Powerful New GeForce RTX™ 2070 Takes Advantage Of The Cutting-Edge NVIDIA Turing™ Architecture To Immerse You In Incredible Realism And Performance In The Latest Games. The Future Of Gaming Starts Here",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/w6ZtXVy/14-126-556-25.jpg"
+  },
+  {
+    "_id": 5,
+    "name": "Samsung 860 Evo 500GB 2.5 Inch Internal SSD",
+    "price": "69",
+    "description": "The Newest Edition To The World's Best-Selling* SATA SSD Series, The Samsung 860 EVO Is Specially Designed To Enhance Performance Of Mainstream PCs And Laptops. With The Latest V-NAND Technology, This Fast And Reliable SSD Comes In A Wide Range Of Compatible Form Factors And Capacities.",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/98W95FX/20-147-793-V07-1.jpg"
+  },
+  {
+    "_id": 6,
+    "name": "DeepCool Gammaxx GT ARGB Air CPU Cooler",
+    "price": "49",
+    "description": "Efficiently Cool And Enhance The Aesthetics Of Your Build With The Gammaxx GT A-RGB CPU Cooler From Deepcool. This CPU Cooler Is Compatible With A Wide Range Of Both Intel And AMD Sockets, And It Comes With A 120mm Fan. The Lighting Schemes On The RGB-Lit Aluminum Top Cover Can Be Controlled Via A Compatible Motherboard Or Using The Included Wired Controller.",
+    "minOrder": "50",
+    "available": "300",
+    "img": "https://i.ibb.co/r4wfcdf/APNCS220507-BVBE9-1.jpg"
+  }
+]
