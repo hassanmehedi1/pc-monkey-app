@@ -25,7 +25,7 @@ const Product = ({product}) => {
              onClick={() => navigateToPurchase(_id)}
            className=" bg-purple-500 text-white hover:bg-purple-600 font-semibold p-2 px-4 rounded-full w-64"
          >
-           Order
+           Place Order
          </button>
        </div>
      </div>
