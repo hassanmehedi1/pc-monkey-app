@@ -10,7 +10,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
-// import useToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -32,7 +32,9 @@ const SignUp = () => {
     if (errorMsg) {
       switch (errorMsg?.code) {
         case "auth/email-already-in-use":
-          toast.error("This Email is already in use! Please provide another Email");
+          toast.error(
+            "This Email is already in use! Please provide another Email"
+          );
           break;
 
         default:
@@ -41,7 +43,7 @@ const SignUp = () => {
     }
   }, [error, gError, updateError]);
 
-//   const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   const navigate = useNavigate();
 
@@ -59,20 +61,15 @@ const SignUp = () => {
   //   );
   // }
 
-  if (user || gUser) {
-    navigate("/");
+  if (token) {
+    toast.success("User Created Successfully");
+    // navigate("/");
   }
 
   const onSubmit = async (data, e) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-
-    if(user){
-      toast.success("User Created Successfully");
-      // console.log(data);
-      navigate("/");
-    }
-    
+    console.log(data);
   };
 
   return (
