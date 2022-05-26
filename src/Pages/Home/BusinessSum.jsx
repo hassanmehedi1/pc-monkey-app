@@ -4,9 +4,9 @@ const BusinessSum = () => {
    return (
      <>
      <div>
-        <h2 className='text-3xl font-semibold text-secondary text-center'>Business Summary</h2>
+        <h2 className='text-3xl font-semibold text-secondary text-center mt-4'>Business Summary</h2>
      </div>
-       <div class="stats w-full shadow-lg mb-8">
+       <div class="stats w-full shadow-lg">
          <div class="stat gap-4">
            <div class="stat-figure text-primary">
              <svg

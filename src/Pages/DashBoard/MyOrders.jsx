@@ -9,14 +9,15 @@ import OrderRow from "./OrderRow";
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
-  
 
   const {
     data: orders,
     isLoading,
     refetch,
-  } = useQuery("doctors", () =>
-    fetch(`http://localhost:5000/orders?client=${user.email}`).then((res) => res.json())
+  } = useQuery("orders", () =>
+    fetch(`http://localhost:5000/orders?email=${user.email}`, {
+      method: "GET",
+    }).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -40,14 +41,24 @@ const MyOrders = () => {
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <OrderRow key={index} order={order} index={index} setDeleteOrder={setDeleteOrder} refetch={refetch}></OrderRow>
+              <OrderRow
+                key={index}
+                order={order}
+                index={index}
+                setDeleteOrder={setDeleteOrder}
+                refetch={refetch}
+              ></OrderRow>
             ))}
           </tbody>
         </table>
       </div>
-      {
-         deleteOrder && <OrderDeleteConfirmModal deleteOrder={deleteOrder} refetch={refetch} setDeleteOrder={setDeleteOrder}></OrderDeleteConfirmModal>
-      }
+      {deleteOrder && (
+        <OrderDeleteConfirmModal
+          deleteOrder={deleteOrder}
+          refetch={refetch}
+          setDeleteOrder={setDeleteOrder}
+        ></OrderDeleteConfirmModal>
+      )}
     </div>
   );
 };
