@@ -63,7 +63,7 @@ const SignUp = () => {
 
   if (token) {
     toast.success("User Created Successfully");
-    // navigate("/");
+    navigate("/");
   }
 
   const onSubmit = async (data, e) => {
