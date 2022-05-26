@@ -135,7 +135,7 @@ const Purchase = () => {
               defaultValue={50}
               type="number"
               {...register("quantity", {
-                min: `${minOrder}`,
+                min: 50,
                 max: `${available}`,
                 required: {
                   value: true,

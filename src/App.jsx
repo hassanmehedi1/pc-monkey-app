@@ -17,6 +17,7 @@ import AddReview from './Pages/DashBoard/AddReview';
 import MyProfile from './Pages/DashBoard/MyProfile';
 import Payment from './Pages/DashBoard/Payment';
 import Users from './Pages/DashBoard/Users';
+import AddProduct from './Pages/DashBoard/AddProduct';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
             <Route path='profile' element={<MyProfile></MyProfile>}></Route>
             <Route path='payment/:id' element={<Payment></Payment>}></Route>
             <Route path='users' element={<Users></Users>}></Route>
+            <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           </Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
