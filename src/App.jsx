@@ -15,6 +15,7 @@ import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrders from './Pages/DashBoard/MyOrders';
 import AddReview from './Pages/DashBoard/AddReview';
 import MyProfile from './Pages/DashBoard/MyProfile';
+import Payment from './Pages/DashBoard/Payment';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <Route index element={<MyOrders></MyOrders>}></Route>
             <Route path='review' element={<AddReview></AddReview>}></Route>
             <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+            <Route path='payment/:id' element={<Payment></Payment>}></Route>
           </Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>

@@ -15,7 +15,7 @@ const Product = ({product}) => {
        </figure>
        <div className="card-body text-left">
          <h2 className="card-title text-xl font-bold">{name}</h2>
-         <h4 className="font-semibold">Price: ${price}</h4>
+         <h4 className="font-semibold">Price: ${price}/pc</h4>
          <h5 className="font-semibold">Min-Order-Quantity: {minOrder}</h5>
          <h6 className="font-semibold">Available-Quantity: {available}</h6>
          <p>{description}</p>

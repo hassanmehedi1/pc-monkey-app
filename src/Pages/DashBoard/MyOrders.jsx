@@ -33,13 +33,14 @@ const MyOrders = () => {
               <th>Name</th>
               <th>Item</th>
               <th>Quantity</th>
+              <th>Price</th>
               <th>Payment</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <OrderRow key={index} order={order} index={index} setDeleteOrder={setDeleteOrder}></OrderRow>
+              <OrderRow key={index} order={order} index={index} setDeleteOrder={setDeleteOrder} refetch={refetch}></OrderRow>
             ))}
           </tbody>
         </table>

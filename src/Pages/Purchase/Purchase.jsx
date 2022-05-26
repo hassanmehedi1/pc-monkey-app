@@ -11,7 +11,7 @@ const Purchase = () => {
 
   const [parts, setParts] = useState({});
   const [user] = useAuthState(auth);
-  const { name } = parts;
+  const { name, minOrder, available, price } = parts;
 
   const {
     register,
@@ -75,7 +75,7 @@ const Purchase = () => {
         </figure>
         <div class="card-body">
           <h2 className="card-title text-xl font-bold">{parts.name}</h2>
-          <h4 className="font-semibold">Price: ${parts.price}</h4>
+          <h4 className="font-semibold">Price: ${parts.price}/pc</h4>
           <h5 className="font-semibold">
             Min-Order-Quantity: {parts.minOrder}
           </h5>
@@ -108,7 +108,8 @@ const Purchase = () => {
               defaultValue={user.email}
               {...register("email")}
             />
-            { name &&
+
+            {name && (
               <input
                 className="input input-bordered w-full max-w-xs"
                 placeholder="Item"
@@ -116,15 +117,26 @@ const Purchase = () => {
                 name="item"
                 {...register("item")}
               />
-            }
+            )}
+            <label>Price</label>
+            {price && (
+              <input
+                className="input input-bordered w-full max-w-xs"
+                placeholder="Price"
+                defaultValue={price}
+                name="price"
+                {...register("price")}
+              />
+            )}
+            <label>Quantity</label>
             <input
               className="input input-bordered w-full max-w-x"
               placeholder="Quantity"
               defaultValue={50}
               type="number"
               {...register("quantity", {
-                min: 50,
-                max: 299,
+                min: `${minOrder}`,
+                max: `${available}`,
                 required: {
                   value: true,
                   message: "Quantity is Required",
@@ -134,7 +146,8 @@ const Purchase = () => {
             <label className="label">
               {errors.quantity && (
                 <span className="label-text-alt text-red-600">
-                  Minimum Order Quantity is 50 and Max is 299
+                  Minimum Order Quantity is 50 and Max should be less or equal
+                  to available quantity!
                 </span>
               )}
             </label>
