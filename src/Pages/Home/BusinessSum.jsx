@@ -57,7 +57,7 @@ const BusinessSum = () => {
                </div>
              </div>
            </div>
-           <div class="stat-value">86%</div>
+           <div class="stat-value">85%</div>
            <div class="stat-title font-semibold">Satisfied Clients</div>
            <div class="stat-desc text-secondary">15% more than last month</div>
          </div>

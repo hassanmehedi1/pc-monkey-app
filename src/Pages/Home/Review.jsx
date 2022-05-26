@@ -17,7 +17,7 @@ const Review = ({review}) => {
            </div>
            <div>
              <h4 className="font-bold">{name}</h4>
-             <span className="text-xs dark:text-gray-400">2 days ago</span>
+             <span className="text-xs dark:text-gray-400">Client</span>
            </div>
          </div>
          <div className="flex items-center space-x-2 dark:text-yellow-400">

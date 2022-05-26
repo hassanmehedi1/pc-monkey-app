@@ -12,7 +12,7 @@ const Products = () => {
            Pc Parts
          </h1>
          <div className="services-container mt-2 grid md:grid-cols-3 sm:grid-cols-1 justify-center">
-           {products.slice(0, 6).map((product) => (
+           {products.slice(0, 6).reverse().map((product) => (
              <Product key={product._id} product={product}></Product>
            ))}
          </div>
