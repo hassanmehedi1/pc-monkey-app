@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -27,6 +27,20 @@ const SignUp = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+  useEffect(() => {
+    const errorMsg = error || gError || updateError;
+    if (errorMsg) {
+      switch (errorMsg?.code) {
+        case "auth/email-already-in-use":
+          toast.error("This Email is already in use! Please provide another Email");
+          break;
+
+        default:
+          toast("something went wrong");
+      }
+    }
+  }, [error, gError, updateError]);
+
 //   const [token] = useToken(user || gUser);
 
   const navigate = useNavigate();
@@ -37,13 +51,13 @@ const SignUp = () => {
     return <Loading></Loading>;
   }
 
-  if (error || gError || updateError) {
-    signInError = (
-      <p className="text-red-500">
-        <small>{error?.message || gError?.message}</small>
-      </p>
-    );
-  }
+  // if (error || gError || updateError) {
+  //   signInError = (
+  //     <p className="text-red-500">
+  //       <small>{error?.message || gError?.message}</small>
+  //     </p>
+  //   );
+  // }
 
   if (user || gUser) {
     navigate("/");
@@ -53,10 +67,12 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
 
-    toast.success("User Created Successfully");
-    reset({});
-    console.log(data);
-    // navigate("/appointment");
+    if(user){
+      toast.success("User Created Successfully");
+      // console.log(data);
+      navigate("/");
+    }
+    
   };
 
   return (
