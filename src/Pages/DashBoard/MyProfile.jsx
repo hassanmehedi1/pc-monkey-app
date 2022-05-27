@@ -33,26 +33,13 @@ const MyProfile = () => {
   };
   return (
     <div>
-      {/* <h2 className="text-xl font-semibold text-teal-500 mt-5">
-        Name: {user.displayName}
+      <h2 className="text-xl font-semibold text-teal-500 mt-5">
+        Name: {user?.displayName}
       </h2>
       <h2 className="text-xl font-semibold text-teal-500  mt-5">
-        Your Email: {user.email}
-      </h2> */}
+        Your Email: {user?.email}
+      </h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className="input input-bordered w-full max-w-xs mb-4 mt-5"
-          placeholder="Name"
-          value={user.displayName}
-          {...register("name")}
-        />
-        <br />
-        <input
-          className="input input-bordered w-full max-w-xs"
-          placeholder="Email"
-          value={user.email}
-          {...register("email")}
-        />
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text text-xl">Education</span>
