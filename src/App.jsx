@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="login" element={<Login></Login>}></Route>

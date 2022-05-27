@@ -6,7 +6,7 @@ const Products = () => {
   const [products] = useProducts();
 
   return (
-    <div className="container mt-4" id="services">
+    <div className="container mt-4 w-50 mx-auto" id="services">
       <div className="row text-center">
         <h1 className="text-secondary text-4xl font-bold mb-2 font-mono">
           Pc Parts

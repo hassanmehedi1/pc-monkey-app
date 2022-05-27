@@ -18,7 +18,7 @@ const Product = ({product}) => {
          <h4 className="font-semibold">Price: ${price}/pc</h4>
          <h5 className="font-semibold">Min-Order-Quantity: {minOrder}</h5>
          <h6 className="font-semibold">Available-Quantity: {available}</h6>
-         <p>{description}</p>
+         <p className='text-xs'>{description}</p>
        </div>
        <div className="grid justify-center mb-3">
          <button
