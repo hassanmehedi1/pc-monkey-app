@@ -18,6 +18,7 @@ import MyProfile from './Pages/DashBoard/MyProfile';
 import Payment from './Pages/DashBoard/Payment';
 import Users from './Pages/DashBoard/Users';
 import AddProduct from './Pages/DashBoard/AddProduct';
+import ManageAllOrder from './Pages/DashBoard/ManageAllOrder';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
             <Route path='payment/:id' element={<Payment></Payment>}></Route>
             <Route path='users' element={<Users></Users>}></Route>
             <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+            <Route path='manageorder' element={<ManageAllOrder></ManageAllOrder>}></Route>
           </Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>

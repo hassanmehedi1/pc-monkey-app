@@ -27,8 +27,8 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((proData) => {
-         toast('Profile Updated')
-        console.log(proData);
+        toast('Profile Updated')
+        // console.log(proData);
       });
   };
   return (
