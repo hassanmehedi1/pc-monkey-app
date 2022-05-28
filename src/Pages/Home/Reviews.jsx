@@ -2,6 +2,8 @@ import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import Review from "./Review";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Reviews = () => {
   const {
@@ -21,7 +23,7 @@ const Reviews = () => {
     <section className="my-28">
       <div className="flex flex-col items-center justify-center mb-3">
         <h1 className="lg:text-4xl text-3xl font-bold text-center text-primary">
-          Hear from our clients
+          Hear From Our Clients
         </h1>
         <p className="text-base leading-6 mt-4 text-center text-secondary 2xl:w-2/5 ">
           Here is why you should trust us with your work achievements

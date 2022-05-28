@@ -7,7 +7,7 @@ import CustomLink from "./CustomLink";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  // console.log(user);
+  console.log(user);
 
   const logout = () => {
     signOut(auth);
@@ -29,6 +29,7 @@ const Navbar = () => {
           <CustomLink to="/dashboard">Dashboard</CustomLink>
         </li>
       )}
+
       <li>{<p className="text-blue-500">{user?.displayName}</p>}</li>
       <li>
         {user ? (
@@ -44,6 +45,23 @@ const Navbar = () => {
           </Link>
         )}
       </li>
+      {user?.photoURL ? (
+        <div className="h-10 w-10 sm:mb-2 lg:mb-0 mr-3 ml-4">
+          <img
+            src={user.photoURL}
+            alt
+            className="h-full w-full rounded-full overflow-hidden shadow"
+          />
+        </div>
+      ) : (
+        <div className="h-10 w-10 mb-4 lg:mb-0 mr-4 ml-4">
+          <img
+            src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png"
+            alt
+            className="h-full w-full rounded-full overflow-hidden shadow"
+          />
+        </div>
+      )}
     </>
   );
   return (
