@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
-import OrderDeleteConfirmModal from "./OrderDeleteConfirmModal";
-import OrderRow from "./OrderRow";
+import ProductDeleteConfirmModal from "./ProductDeleteConfirmModal";
+import ProductsRow from "./ProductsRow";
 
-const MyOrders = () => {
+const ManageProducts = () => {
   const [user] = useAuthState(auth);
-  const [deleteOrder, setDeleteOrder] = useState(null);
+  const [deletePart, setDeletePart] = useState(null);
 
   const {
-    data: orders,
+    data: parts,
     isLoading,
     refetch,
-  } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/orders?email=${user.email}`, {
+  } = useQuery("parts", () =>
+    fetch(`http://localhost:5000/parts`, {
       method: "GET",
     }).then((res) => res.json())
   );
@@ -23,44 +23,41 @@ const MyOrders = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-
   return (
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-5">
         <table className="table w-full">
           <thead>
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Item</th>
-              <th>Quantity</th>
               <th>Price</th>
-              <th>Payment</th>
+              <th>Available Quantity</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order, index) => (
-              <OrderRow
+            {parts.map((part, index) => (
+              <ProductsRow
                 key={index}
-                order={order}
+                part={part}
                 index={index}
-                setDeleteOrder={setDeleteOrder}
+                setDeletePart={setDeletePart}
                 refetch={refetch}
-              ></OrderRow>
+              ></ProductsRow>
             ))}
           </tbody>
         </table>
       </div>
-      {deleteOrder && (
-        <OrderDeleteConfirmModal
-          deleteOrder={deleteOrder}
+      {deletePart && (
+        <ProductDeleteConfirmModal
+          deletePart={deletePart}
           refetch={refetch}
-          setDeleteOrder={setDeleteOrder}
-        ></OrderDeleteConfirmModal>
+          setDeletePart={setDeletePart}
+        ></ProductDeleteConfirmModal>
       )}
     </div>
   );
 };
 
-export default MyOrders;
+export default ManageProducts;

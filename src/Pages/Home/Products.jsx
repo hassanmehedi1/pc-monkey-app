@@ -16,7 +16,7 @@ const Products = () => {
             .slice(-6)
             .reverse()
             .map((product, index) => (
-              <Product key={product.index} product={product}></Product>
+              <Product key={product._id} product={product}></Product>
             ))}
         </div>
       </div>

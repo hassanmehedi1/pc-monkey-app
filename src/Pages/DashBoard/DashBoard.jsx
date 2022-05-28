@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useAdmin from '../../hooks/useAdmin';
+import CustomLink from '../Shared/CustomLink';
 
 const DashBoard = () => {
   const [user] = useAuthState(auth);
@@ -26,30 +27,30 @@ const DashBoard = () => {
            {!admin && (
              <>
                <li>
-                 <Link to="/dashboard">My Orders</Link>
+                 <CustomLink to="/dashboard">My Orders</CustomLink>
                </li>
                <li>
-                 <Link to="/dashboard/review">Add a Review</Link>
+                 <CustomLink to="/dashboard/review">Add a Review</CustomLink>
                </li>
              </>
            )}
 
            <li>
-             <Link to="/dashboard/profile">My Profile</Link>
+             <CustomLink to="/dashboard/profile">My Profile</CustomLink>
            </li>
            {admin && (
              <>
                <li>
-                 <Link to="/dashboard/users">Make Admin</Link>
+                 <CustomLink to="/dashboard/users">Make Admin</CustomLink>
                </li>
                <li>
-                 <Link to="/dashboard/manageorder">Manage All Orders</Link>
+                 <CustomLink to="/dashboard/manageorder">Manage All Orders</CustomLink>
                </li>
                <li>
-                 <Link to="/dashboard/addproduct">Add a Product</Link>
+                 <CustomLink to="/dashboard/addproduct">Add a Product</CustomLink>
                </li>
                <li>
-                 <Link to="/dashboard/manageproducts">Manage Products</Link>
+                 <CustomLink to="/dashboard/manageproducts">Manage Products</CustomLink>
                </li>
              </>
            )}

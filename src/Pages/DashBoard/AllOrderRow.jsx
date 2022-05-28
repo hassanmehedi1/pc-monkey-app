@@ -53,7 +53,7 @@ const AllOrderRow = ({ index, order, setDeleteOrder }) => {
           <label
             onClick={() => setDeleteOrder(order)}
             for="all-order-delete-confirm-modal"
-            class="btn btn-xs btn-error"
+            className="btn btn-xs btn-error"
           >
             Cancel
           </label>

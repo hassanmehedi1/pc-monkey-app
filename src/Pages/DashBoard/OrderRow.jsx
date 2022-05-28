@@ -30,7 +30,7 @@ const OrderRow = ({ order, index, setDeleteOrder, refetch }) => {
           <label
             onClick={() => setDeleteOrder(order)}
             for="delete-confirm-modal"
-            class="btn btn-xs btn-error"
+            className="btn btn-xs btn-error"
           >
             Cancel
           </label>

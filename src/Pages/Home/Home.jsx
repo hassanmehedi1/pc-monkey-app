@@ -5,6 +5,7 @@ import BusinessSum from './BusinessSum';
 import Community from './Community';
 import Products from './Products';
 import Reviews from './Reviews';
+import Stats from './Stats';
 import WhyUS from './WhyUs';
 
 const Home = () => {

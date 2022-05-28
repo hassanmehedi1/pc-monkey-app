@@ -69,11 +69,11 @@ const Purchase = () => {
       </div>
       <div className="flex flex-col w-50 mx-auto"></div> */}
 
-      <div class="card w-2/3 mx-auto lg:card-side bg-base-100 shadow-xl mb-12 mt-5">
+      <div className="card w-2/3 mx-auto lg:card-side bg-base-100 shadow-xl mb-12 mt-5">
         <figure>
           <img className="w-96" src={parts.img} alt="Album" />
         </figure>
-        <div class="card-body">
+        <div className="card-body">
           <h2 className="card-title text-xl font-bold">{parts.name}</h2>
           <h4 className="font-semibold">Price: ${parts.price}/pc</h4>
           <h5 className="font-semibold">
@@ -85,11 +85,11 @@ const Purchase = () => {
           <p>{parts.description}</p>
         </div>
       </div>
-      <div class="divider">O</div>
+      <div className="divider">O</div>
 
-      <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-        <div class="card-body">
-          <h2 class="font-semibold text-2xl text-indigo-600 text-center">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+        <div className="card-body">
+          <h2 className="font-semibold text-2xl text-indigo-600 text-center">
             Place Order
           </h2>
           <form

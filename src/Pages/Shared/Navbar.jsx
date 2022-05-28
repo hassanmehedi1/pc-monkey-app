@@ -3,6 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import CustomLink from "./CustomLink";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -15,24 +16,20 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <CustomLink to="/">Home</CustomLink>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <CustomLink to="/blogs">Blogs</CustomLink>
       </li>
       <li>
-        <Link to="/portfolio">Portfolio</Link>
+        <CustomLink to="/portfolio">Portfolio</CustomLink>
       </li>
       {user && (
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <CustomLink to="/dashboard">Dashboard</CustomLink>
         </li>
       )}
-      <li>
-        {
-          <p className="text-blue-500">{user?.displayName}</p>
-        }
-      </li>
+      <li>{<p className="text-blue-500">{user?.displayName}</p>}</li>
       <li>
         {user ? (
           <button
@@ -42,7 +39,9 @@ const Navbar = () => {
             Sign Out
           </button>
         ) : (
-          <Link to="/login" className="bg-green-400">Login</Link>
+          <Link to="/login" className="bg-green-400">
+            Login
+          </Link>
         )}
       </li>
     </>
@@ -91,12 +90,12 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-5 h-5 stroke-current"
+            className="inline-block w-5 h-5 stroke-current"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>

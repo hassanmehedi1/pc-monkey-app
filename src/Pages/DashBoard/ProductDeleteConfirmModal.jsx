@@ -1,19 +1,19 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const AllOrderDeleteModal = ({ deleteOrder, refetch, setDeleteOrder }) => {
-  const { item, _id } = deleteOrder;
+const ProductDeleteConfirmModal = ({ deletePart, refetch, setDeletePart }) => {
+  const { name, _id } = deletePart;
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/orders/${_id}`, {
+    fetch(`http://localhost:5000/parts/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          toast.success(`${item} is deleted successfully`);
-          setDeleteOrder(null);
-          // refetch();
+          toast.success(`${name} is deleted successfully`);
+          setDeletePart(null);
+          refetch();
         }
       });
   };
@@ -21,13 +21,13 @@ const AllOrderDeleteModal = ({ deleteOrder, refetch, setDeleteOrder }) => {
     <div>
       <input
         type="checkbox"
-        id="all-order-delete-confirm-modal"
+        id="product-delete-confirm-modal"
         className="modal-toggle"
       />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <h3 className="font-bold text-lg text-red-500">
-            Are you sure you want to delete {item}!
+            Are you sure you want to delete {name}!
           </h3>
           <div className="modal-action">
             <button
@@ -36,7 +36,7 @@ const AllOrderDeleteModal = ({ deleteOrder, refetch, setDeleteOrder }) => {
             >
               Delete
             </button>
-            <label for="all-order-delete-confirm-modal" className="btn btn-xs">
+            <label for="product-delete-confirm-modal" className="btn btn-xs">
               Cancel
             </label>
           </div>
@@ -46,4 +46,4 @@ const AllOrderDeleteModal = ({ deleteOrder, refetch, setDeleteOrder }) => {
   );
 };
 
-export default AllOrderDeleteModal;
+export default ProductDeleteConfirmModal;

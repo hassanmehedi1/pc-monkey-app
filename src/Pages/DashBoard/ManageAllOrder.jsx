@@ -8,16 +8,16 @@ import AllOrderRow from "./AllOrderRow";
 const ManageAllOrder = () => {
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
-  const [orders, setOrders] = useState([])
+  const [orders, setOrders] = useState([]);
 
-//   const { data: orders, isLoading, refetch } = useQuery(
-//     "order",
-//     fetch("http://localhost:5000/allOrders").then(res => res.json().then(data => console.log(data)))
-//   );
+  //   const { data: orders, isLoading, refetch } = useQuery(
+  //     "order",
+  //     fetch("http://localhost:5000/allOrders").then(res => res.json().then(data => console.log(data)))
+  //   );
 
-//   if(isLoading){
-//      return <Loading></Loading>
-//   }
+  //   if(isLoading){
+  //      return <Loading></Loading>
+  //   }
 
   useEffect(() => {
     fetch("http://localhost:5000/allOrders")
@@ -28,8 +28,8 @@ const ManageAllOrder = () => {
   }, [orders, user]);
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -48,7 +48,7 @@ const ManageAllOrder = () => {
                 order={order}
                 index={index}
                 setDeleteOrder={setDeleteOrder}
-               //  refetch={refetch}
+                //  refetch={refetch}
               ></AllOrderRow>
             ))}
           </tbody>
