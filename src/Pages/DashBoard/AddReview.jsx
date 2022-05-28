@@ -19,7 +19,7 @@ const AddReview = () => {
   const onSubmit = (data, e) => {
     console.log(data);
 
-    const url = `http://localhost:5000/review`;
+    const url = `https://stark-lake-42381.herokuapp.com/review`;
     axios.post(url, data).then((response) => {
       const { data } = response;
       console.log(data);

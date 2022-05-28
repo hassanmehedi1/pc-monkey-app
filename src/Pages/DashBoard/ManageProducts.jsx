@@ -15,7 +15,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("parts", () =>
-    fetch(`http://localhost:5000/parts`, {
+    fetch(`https://stark-lake-42381.herokuapp.com/parts`, {
       method: "GET",
     }).then((res) => res.json())
   );

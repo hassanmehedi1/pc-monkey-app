@@ -9,7 +9,9 @@ const Reviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch(`http://localhost:5000/review`).then((res) => res.json())
+    fetch(`https://stark-lake-42381.herokuapp.com/review`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

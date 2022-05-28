@@ -7,7 +7,7 @@ import auth from "../../firebase.init";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const {email} = user;
+  const { email } = user;
 
   const {
     register,
@@ -18,7 +18,7 @@ const MyProfile = () => {
 
   const onSubmit = (data, e) => {
     console.log(data);
-    fetch(`http://localhost:5000/profile`, {
+    fetch(`https://stark-lake-42381.herokuapp.com/profile`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -27,7 +27,7 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((proData) => {
-        toast('Profile Updated')
+        toast("Profile Updated");
         // console.log(proData);
       });
   };

@@ -12,7 +12,7 @@ const ManageAllOrder = () => {
 
   //   const { data: orders, isLoading, refetch } = useQuery(
   //     "order",
-  //     fetch("http://localhost:5000/allOrders").then(res => res.json().then(data => console.log(data)))
+  //     fetch("https://stark-lake-42381.herokuapp.com/allOrders").then(res => res.json().then(data => console.log(data)))
   //   );
 
   //   if(isLoading){
@@ -20,7 +20,7 @@ const ManageAllOrder = () => {
   //   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://stark-lake-42381.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

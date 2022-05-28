@@ -27,7 +27,7 @@ const DashBoard = () => {
            {!admin && (
              <>
                <li>
-                 <CustomLink to="/dashboard">My Orders</CustomLink>
+                 <CustomLink to="/dashboard/orders">My Orders</CustomLink>
                </li>
                <li>
                  <CustomLink to="/dashboard/review">Add a Review</CustomLink>
@@ -36,7 +36,7 @@ const DashBoard = () => {
            )}
 
            <li>
-             <CustomLink to="/dashboard/profile">My Profile</CustomLink>
+             <CustomLink to="/dashboard">My Profile</CustomLink>
            </li>
            {admin && (
              <>

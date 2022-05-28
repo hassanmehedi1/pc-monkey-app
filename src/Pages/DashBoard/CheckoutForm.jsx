@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
   const { name, price, item, _id, email } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://stark-lake-42381.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,8 +29,8 @@ const CheckoutForm = ({ order }) => {
       });
   }, [price]);
 
-  if(processing){
-     return <Loading></Loading>
+  if (processing) {
+    return <Loading></Loading>;
   }
 
   const handleSubmit = async (event) => {
@@ -56,8 +56,8 @@ const CheckoutForm = ({ order }) => {
     } else {
       setCardError("");
     }
-    setSuccess('')
-    setProcessing(true)
+    setSuccess("");
+    setProcessing(true);
 
     // confirm card payment
     const { paymentIntent, error: intentError } =
@@ -85,7 +85,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://stark-lake-42381.herokuapp.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

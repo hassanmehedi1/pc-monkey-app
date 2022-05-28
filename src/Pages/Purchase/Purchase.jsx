@@ -22,7 +22,7 @@ const Purchase = () => {
 
   useEffect(() => {
     (async () => {
-      const url = `http://localhost:5000/parts/${purchaseId}`;
+      const url = `https://stark-lake-42381.herokuapp.com/parts/${purchaseId}`;
       try {
         const { data } = await axios.get(url);
         setParts(data);
@@ -35,7 +35,7 @@ const Purchase = () => {
   const onSubmit = (data, e) => {
     console.log(data);
 
-    const url = `http://localhost:5000/orders`;
+    const url = `https://stark-lake-42381.herokuapp.com/orders`;
 
     axios.post(url, data).then((response) => {
       const { data } = response;
