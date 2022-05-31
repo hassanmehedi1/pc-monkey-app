@@ -119,7 +119,7 @@ const CheckoutForm = ({ order }) => {
           }}
         />
         <button
-          className="btn btn-success btn-sm mt-4"
+          className="btn btn-outline btn-success w-52 mx-auto justify-center grid mt-12"
           type="submit"
           disabled={!stripe || !clientSecret}
         >

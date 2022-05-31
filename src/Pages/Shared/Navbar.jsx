@@ -7,7 +7,7 @@ import CustomLink from "./CustomLink";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
 
   const logout = () => {
     signOut(auth);
@@ -45,23 +45,6 @@ const Navbar = () => {
           </Link>
         )}
       </li>
-      {user?.photoURL ? (
-        <div className="h-10 w-10 sm:mb-2 lg:mb-0 mr-3 ml-4">
-          <img
-            src={user.photoURL}
-            alt
-            className="h-full w-full rounded-full overflow-hidden shadow"
-          />
-        </div>
-      ) : (
-        <div className="h-10 w-10 mb-4 lg:mb-0 mr-4 ml-4">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png"
-            alt
-            className="h-full w-full rounded-full overflow-hidden shadow"
-          />
-        </div>
-      )}
     </>
   );
   return (
@@ -91,12 +74,34 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost font-mono normal-case text-xl">
+        <Link
+          to="/"
+          className="btn btn-ghost font-mono font-bold text-2xl uppercase text-indigo-500"
+        >
           PC Monkey
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+        <ul className="menu menu-horizontal p-0">
+          {menuItems}
+          {user?.photoURL ? (
+            <div className="h-10 w-10 sm:mb-2 lg:mb-0 mr-3 ml-4">
+              <img
+                src={user?.photoURL}
+                alt
+                className="h-full w-full rounded-full overflow-hidden shadow"
+              />
+            </div>
+          ) : (
+            <div className="h-10 w-10 mb-4 lg:mb-0 mr-4 ml-4">
+              <img
+                src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png"
+                alt
+                className="h-full w-full rounded-full overflow-hidden shadow"
+              />
+            </div>
+          )}
+        </ul>
       </div>
       <div className="navbar-center">
         <label

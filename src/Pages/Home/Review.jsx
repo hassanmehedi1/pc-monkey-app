@@ -4,8 +4,10 @@ import { BsFillStarFill } from "react-icons/bs";
 
 const Review = ({review}) => {
    const {name, rating, comment} = review;
+
+
    return (
-     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md border shadow-xl">
+     <div className="container flex flex-col w-80 max-w-lg p-6 mx-auto divide-y rounded-md border shadow-xl">
        <div className="flex justify-between p-4">
          <div className="flex space-x-4">
            <div>

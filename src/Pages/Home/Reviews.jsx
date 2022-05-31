@@ -20,7 +20,7 @@ const Reviews = () => {
     return <Loading></Loading>;
   }
   return (
-    <section className="my-28">
+    <section className="my-20">
       <div className="flex flex-col items-center justify-center mb-3">
         <h1 className="lg:text-4xl text-3xl font-bold text-center text-primary">
           Hear From Our Clients
@@ -34,6 +34,65 @@ const Reviews = () => {
           <Review key={review._id} review={review}></Review>
         ))}
       </div>
+
+      {/* <h1 className="lg:text-4xl text-3xl font-bold text-center text-primary">
+        Hear From Our Clients
+      </h1>
+      <p className="text-base leading-6 mt-4 text-center text-secondary 2xl:w-2/5 mb-4">
+        Here is why you should trust us with your work achievements
+      </p>
+      <Carousel
+        additionalTransfrom={0}
+        arrows
+        autoPlaySpeed={2000}
+        centerMode={false}
+        className=""
+        containerClass="container"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        partialVisible
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024,
+            },
+            items: 3,
+            partialVisibilityGutter: 40,
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0,
+            },
+            items: 1,
+            partialVisibilityGutter: 30,
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464,
+            },
+            items: 2,
+            partialVisibilityGutter: 30,
+          },
+        }}
+        showDots
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
+      >
+        {reviews.reverse().map((review) => (
+          <Review key={review._id} review={review}></Review>
+        ))}
+      </Carousel> */}
     </section>
   );
 };
