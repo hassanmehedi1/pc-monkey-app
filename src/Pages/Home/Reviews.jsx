@@ -20,17 +20,18 @@ const Reviews = () => {
     return <Loading></Loading>;
   }
   return (
-    <section className="my-20">
+    <section className="my-14">
       <div className="flex flex-col items-center justify-center mb-3">
         <h1 className="lg:text-4xl text-3xl font-bold text-center text-primary">
           Hear From Our Clients
         </h1>
         <p className="text-base leading-6 mt-4 text-center text-secondary 2xl:w-2/5 ">
-          Here is why you should trust us with your work achievements
+          Here is what are our clients have to say about our product's and
+          service
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {reviews.reverse().map((review) => (
+        {reviews.slice(-6).reverse().map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}
       </div>
@@ -39,7 +40,7 @@ const Reviews = () => {
         Hear From Our Clients
       </h1>
       <p className="text-base leading-6 mt-4 text-center text-secondary 2xl:w-2/5 mb-4">
-        Here is why you should trust us with your work achievements
+        Here is what are our clients have to say about our product's and service
       </p>
       <Carousel
         additionalTransfrom={0}
