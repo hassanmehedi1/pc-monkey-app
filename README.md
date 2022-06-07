@@ -34,8 +34,12 @@
 ### Technology Used
 
 - Firebase
+- MongoDB
+- Express
+- JWT
 - React Router
 - Tailwind
+- DaisyUi
 - React Toastify
 - Github
 - Axios
