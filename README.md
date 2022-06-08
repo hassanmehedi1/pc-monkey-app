@@ -4,7 +4,7 @@
 ![SiteGif](/src/assets/gifs/gif.gif)
 
 ### Description
- This website is pc parts manufacturer who sell parts of pc in wholesale. This website is made with react, firebase, mongodb, express. this is a full responsive website. This website implements full CRUD operation. all buttons are functional here.
+ This website is pc parts manufacturer who sell parts of pc in wholesale. This website is made with react, firebase, mongodb, express. this is a full responsive website. This website implements full CRUD operation. all buttons are functional here. This site also has a Stripe payment gateway system implemented, users can for their ordered products by sample test cards. This site also has a separate dashboard for user and admin.
 
  Admin Access Credentials:
  Email: admin@gmail.com
@@ -44,8 +44,13 @@
 ### Technology Used
 
 - Firebase
+- Stripe
+- MongoDB
+- Express
+- JWT
 - React Router
 - Tailwind
+- DaisyUi
 - React Toastify
 - Github
 - Axios
