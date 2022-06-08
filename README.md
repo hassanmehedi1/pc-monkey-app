@@ -1,9 +1,19 @@
 # PC Monkey App
 
 ## [Live Website](https://pc-monkey.web.app/)
+![SiteGif](/src/assets/gifs/gif.gif)
 
 ### Description
  This website is pc parts manufacturer who sell parts of pc in wholesale. This website is made with react, firebase, mongodb, express. this is a full responsive website. This website implements full CRUD operation. all buttons are functional here.
+
+ Admin Access Credentials:
+ Email: admin@gmail.com
+ Password: 123456
+
+ -Note: Backend Code is Hosted on Heroku(Free-Hosting). So sometime products data might not load at first time, in that case please reload the page again, it will solve this issue.
+
+### [Server Side Code](https://github.com/hassanmehedi1/pc-monkey-server)
+
 
 ### Features Of My Site
 
