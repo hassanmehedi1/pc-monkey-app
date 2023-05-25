@@ -4,7 +4,7 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://stark-lake-42381.herokuapp.com/parts")
+    fetch("https://pc-monkey-server-production.up.railway.app/parts")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

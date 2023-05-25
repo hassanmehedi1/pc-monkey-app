@@ -5,7 +5,7 @@ const ProductDeleteConfirmModal = ({ deletePart, refetch, setDeletePart }) => {
   const { name, _id } = deletePart;
 
   const handleDelete = (id) => {
-    fetch(`https://stark-lake-42381.herokuapp.com/parts/${_id}`, {
+    fetch(`https://pc-monkey-server-production.up.railway.app/parts/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

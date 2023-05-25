@@ -4,9 +4,12 @@ const AllOrderRow = ({ index, order, setDeleteOrder }) => {
   const { item, name, quantity, price, email, status, _id } = order;
 
   const makeShipped = () => {
-    fetch(`https://stark-lake-42381.herokuapp.com/order/admin/${_id}`, {
-      method: "PUT",
-    })
+    fetch(
+      `https://pc-monkey-server-production.up.railway.app/order/admin/${_id}`,
+      {
+        method: "PUT",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

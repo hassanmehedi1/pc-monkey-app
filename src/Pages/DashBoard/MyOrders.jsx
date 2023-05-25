@@ -15,9 +15,12 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`https://stark-lake-42381.herokuapp.com/orders?email=${user.email}`, {
-      method: "GET",
-    }).then((res) => res.json())
+    fetch(
+      `https://pc-monkey-server-production.up.railway.app/orders?email=${user.email}`,
+      {
+        method: "GET",
+      }
+    ).then((res) => res.json())
   );
 
   if (isLoading) {

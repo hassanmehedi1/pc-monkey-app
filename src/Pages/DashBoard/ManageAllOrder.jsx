@@ -12,7 +12,7 @@ const ManageAllOrder = () => {
 
   //   const { data: orders, isLoading, refetch } = useQuery(
   //     "order",
-  //     fetch("https://stark-lake-42381.herokuapp.com/allOrders").then(res => res.json().then(data => console.log(data)))
+  //     fetch("https://pc-monkey-server-production.up.railway.app/allOrders").then(res => res.json().then(data => console.log(data)))
   //   );
 
   //   if(isLoading){
@@ -20,7 +20,7 @@ const ManageAllOrder = () => {
   //   }
 
   useEffect(() => {
-    fetch("https://stark-lake-42381.herokuapp.com/allOrders")
+    fetch("https://pc-monkey-server-production.up.railway.app/allOrders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

@@ -22,7 +22,7 @@ const Purchase = () => {
 
   useEffect(() => {
     (async () => {
-      const url = `https://stark-lake-42381.herokuapp.com/parts/${purchaseId}`;
+      const url = `https://pc-monkey-server-production.up.railway.app/parts/${purchaseId}`;
       try {
         const { data } = await axios.get(url);
         setParts(data);
@@ -35,7 +35,7 @@ const Purchase = () => {
   const onSubmit = (data, e) => {
     console.log(data);
 
-    const url = `https://stark-lake-42381.herokuapp.com/orders`;
+    const url = `https://pc-monkey-server-production.up.railway.app/orders`;
 
     axios.post(url, data).then((response) => {
       const { data } = response;

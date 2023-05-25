@@ -18,7 +18,7 @@ const MyProfile = () => {
 
   const onSubmit = (data, e) => {
     console.log(data);
-    fetch(`https://stark-lake-42381.herokuapp.com/profile`, {
+    fetch(`https://pc-monkey-server-production.up.railway.app/profile`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

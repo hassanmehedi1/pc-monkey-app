@@ -9,7 +9,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://stark-lake-42381.herokuapp.com/user", {
+    fetch("https://pc-monkey-server-production.up.railway.app/user", {
       method: "GET",
     }).then((res) => res.json())
   );

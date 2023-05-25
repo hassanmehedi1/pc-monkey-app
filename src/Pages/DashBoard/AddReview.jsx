@@ -19,7 +19,7 @@ const AddReview = () => {
   const onSubmit = (data, e) => {
     console.log(data);
 
-    const url = `https://stark-lake-42381.herokuapp.com/review`;
+    const url = `https://pc-monkey-server-production.up.railway.app/review`;
     axios.post(url, data).then((response) => {
       const { data } = response;
       console.log(data);

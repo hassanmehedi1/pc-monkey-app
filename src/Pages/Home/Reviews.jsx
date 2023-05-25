@@ -11,8 +11,8 @@ const Reviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch(`https://stark-lake-42381.herokuapp.com/review`).then((res) =>
-      res.json()
+    fetch(`https://pc-monkey-server-production.up.railway.app/review`).then(
+      (res) => res.json()
     )
   );
 
@@ -31,9 +31,12 @@ const Reviews = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {reviews.slice(-6).reverse().map((review) => (
-          <Review key={review._id} review={review}></Review>
-        ))}
+        {reviews
+          .slice(-6)
+          .reverse()
+          .map((review) => (
+            <Review key={review._id} review={review}></Review>
+          ))}
       </div>
 
       {/* <h1 className="lg:text-4xl text-3xl font-bold text-center text-primary">
